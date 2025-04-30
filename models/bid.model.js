@@ -2,6 +2,9 @@
 import mongoose from 'mongoose';
 import uniqueValidator from 'mongoose-unique-validator';
 
+
+
+
 const BidSchema = mongoose.Schema({
   _id: Number,
   pid: String,
