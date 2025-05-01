@@ -12,7 +12,10 @@ import bidRouter from './routes/bid.router.js';
 const app = express();
 
 // ✅ Enable CORS for cross-origin requests
-app.use(cors());
+app.use(cors({
+    origin: 'https://e-auction-v1t6.onrender.com', // your frontend URL
+    credentials: true
+  }));
 
 // ✅ Built-in Express body parsing (no need for body-parser)
 app.use(express.json());  // For JSON requests
