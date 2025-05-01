@@ -5,7 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec babel-node app.js"
+    "dev": "babel-node app.js",  
+  "start": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
     "mongoose": "^6.8.2",
     "mongoose-unique-validator": "^3.1.0",
     "nodemailer": "^6.9.1",
+    "nodemon": "^3.1.10",
     "randomstring": "^1.2.3"
   }
 }
