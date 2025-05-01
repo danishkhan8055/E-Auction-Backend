@@ -1,25 +1,16 @@
-// import mongoose from 'mongoose';
-// const url="mongodb://localhost:27017/eAuction";
-// mongoose.connect(url);
-// console.log("Successfully connected to mongodb database...");
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-dotenv.config();
-
-
-const url = process.env.MONGO_URI ; // Use environment variable if available
 
 const connectDB = async () => {
-    try {
-        await mongoose.connect(url);
-        console.log("✅ Successfully connected to MongoDB database...");
-    } catch (error) {
-        console.error("❌ Database connection failed:", error);
-        process.exit(1); // Exit process if connection fails
-    }
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
+  } catch (err) {
+    console.error('❌ Database connection failed:', err);
+    process.exit(1);
+  }
 };
 
-// Call the function to connect to DB
-connectDB();
-
-export default mongoose;
+export default connectDB;
