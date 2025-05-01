@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import fileupload from 'express-fileupload';
 import dotenv from "dotenv"
+dotenv.config();
 
 // Import API routes
 import userRouter from './routes/user.router.js';
@@ -13,7 +14,6 @@ import connectDB from './models/connection.js';
 
 const app = express();
 connectDB();
-dotenv.config();
 // ✅ Enable CORS for cross-origin requests
 app.use(cors({
     origin: 'https://e-auction-v1t6.onrender.com', // your frontend URL

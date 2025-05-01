@@ -34,7 +34,6 @@ const CategorySchema = new mongoose.Schema({
   _id: {
     type: Number,
     required: true,
-    unique: true
   },
   catnm: {
     type: String,
