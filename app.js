@@ -34,6 +34,9 @@ app.use("/subcategory", subCategoryRouter);
 app.use("/product", productRouter);
 app.use("/bid", bidRouter);
 
+app.get("/", (req, res) => {
+  res.status(200).send("API is running 🚀");
+});
 // ✅ Start the server
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
